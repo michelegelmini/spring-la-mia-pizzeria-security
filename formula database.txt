@@ -1,0 +1,4 @@
+(2, 'Capricciosa', 'Salsiccia, cose, Olive', 'https://www.pizzamagica.it/wp-content/uploads/2021/04/Pizza.png', 7),
+(3, 'Bimbo', 'Wuster e prosciutto', 'https://mamopizza.it/wp-content/uploads/2021/05/canadese.png', 8),
+(4, 'Contadina', 'Patate e speck', 'https://pizzerianostop.it/wp-content/uploads/2021/03/affumicata.png', 10),
+(5, 'Diavola', 'Salamino piccante', 'https://pizzerianostop.it/wp-content/uploads/2021/03/salame-piccante.png', 9);
