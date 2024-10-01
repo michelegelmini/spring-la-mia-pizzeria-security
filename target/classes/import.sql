@@ -2,3 +2,6 @@ INSERT INTO menu (id, name, description, picture, price) VALUES (1, 'Margherita'
 INSERT INTO special_offers (id, starting_date, ending_date, offer_name, discount, pizza_id) VALUES (1, '2024-07-04', '2024-07-24', 'Ten Percent Discount!', 10, 3), (2, '2024-08-04', '2024-08-24', 'Half Price!', 50, 2), (3, '2024-09-04', '2024-09-24', 'Free!', 100, 1);
 INSERT INTO ingredients(id, name) VALUES (1, 'Pomodoro'), (2, 'Mozzarella'),(3, 'Salamino'),(4, 'Funghi'),(5, 'Prosciutto'), (6, 'Patate'), (7, 'Speck'), (8, 'Olive'), (9, 'Mortadella'), (10, 'Burrata'), (11, 'Pistacchi');
 INSERT INTO pizza_ingredient(ingredient_id, pizza_id) VALUES (1, 1), (1, 2), (1, 4), (1, 5), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (3, 5), (4, 4), (5, 2), (6, 4), (7, 4), (8, 2), (5, 2);
+INSERT INTO pizzeria.`role`(id, rolename) VALUES(0, 'ADMIN'), (1, 'USER');
+INSERT INTO pizzeria.`user`(id, password, username) VALUES(0, '{noop}password', 'admin'), (1, '{noop}password', 'user');
+INSERT INTO pizzeria.user_roles(roles_id, user_id) VALUES (0,0);

@@ -3,6 +3,7 @@ package org.lessons.java.pizzeria.security;
 import java.util.Optional;
 
 import org.lessons.java.pizzeria.model.User;
+import org.lessons.java.pizzeria.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
