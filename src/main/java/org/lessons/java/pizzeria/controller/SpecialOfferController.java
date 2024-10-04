@@ -42,7 +42,7 @@ public class SpecialOfferController {
 		service.create(formSpecialOffer);
 		attributes.addFlashAttribute("successMessage", formSpecialOffer.getOfferName() + " has been created!");
 
-		return "redirect:/menu/" + formSpecialOffer.getPizza().getId();
+		return "redirect:/pizzas/" + formSpecialOffer.getPizza().getId();
 	}
 
 	// edit
@@ -67,7 +67,7 @@ public class SpecialOfferController {
 		}
 		// altrimenti salva la pizza nella repo
 		service.update(updatedFormSpecialOffer);
-		// ritorna al menu aggiornato
+		// ritorna al pizzas aggiornato
 		attributes.addFlashAttribute("successMessage", updatedFormSpecialOffer.getOfferName() + " has been updated!");
 
 		return "redirect:/specialOffers";

@@ -13,7 +13,7 @@ public class Role {
 	
 	@NotNull
 	@NotEmpty
-	private String rolename;
+	private String name;
 
 	public Integer getId() {
 		return id;
@@ -23,12 +23,12 @@ public class Role {
 		this.id = id;
 	}
 
-	public String getRolename() {
-		return rolename;
+	public String getName() {
+		return name;
 	}
 
-	public void setRolename(String rolename) {
-		this.rolename = rolename;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

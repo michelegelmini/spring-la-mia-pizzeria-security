@@ -20,7 +20,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "menu")
+@Table(name = "pizzas")
 public class Pizza {
 
 	@Id
@@ -49,16 +49,16 @@ public class Pizza {
 	@OneToMany(mappedBy = "pizza", cascade = {CascadeType.REMOVE})
 	private List<SpecialOffer> specialOffers;
 
-	@Formula("(SELECT menu.price - (menu.price * special_offers.discount / 100) "
-			+ "from menu "
-			+ "INNER JOIN special_offers on menu.id = special_offers.pizza_id "
+	@Formula("(SELECT pizzas.price - (pizzas.price * special_offers.discount / 100) "
+			+ "from pizzas "
+			+ "INNER JOIN special_offers on pizzas.id = special_offers.pizza_id "
 			+ "WHERE special_offers.pizza_id = id)")
 	private Float discountedPrice;
 	
 	@Formula("(SELECT IFNULL(special_offers.discount, '0') "
 			+ "from special_offers "
-			+ "INNER JOIN menu on menu.id = special_offers.pizza_id "
-			+ "Where menu.id = id)")
+			+ "INNER JOIN pizzas on pizzas.id = special_offers.pizza_id "
+			+ "Where pizzas.id = id)")
 	private Float discountPercentage;
 
 	

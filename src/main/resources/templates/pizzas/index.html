@@ -14,7 +14,7 @@
 				<div class="col-12">
 					<h1>Menu</h1>
 					<!--search bar-->
-					<form th:action="@{/menu}" method="GET">
+					<form th:action="@{/pizzas}" method="GET">
 						<div class="input-group input-group-sm mb-3">
 							<span class="input-group-text" id="inputGroup-sizing-sm">Search for pizza by name</span>
 							<input type="text" class="form-control" name="name">
@@ -25,7 +25,7 @@
 
 					<!--create pizza button-->
 					<div class="mb-3 d-flex ">
-						<a th:href="@{/menu/create}" class=" ms-auto me-5 btn btn-lg btn-primary">Add new Pizza</a>
+						<a th:href="@{/pizzas/create}" class=" ms-auto me-5 btn btn-lg btn-primary">Add new Pizza</a>
 					</div>
 
 					<!--alert after create/edit-->
@@ -38,7 +38,7 @@
 
 
 					<!--pizza table-->
-					<th:block th:if="${menu.size > 0}">
+					<th:block th:if="${pizzas.size > 0}">
 
 						<div class="row align-items-center ">
 							<table class="table justify-content-apart table-striped align-middle ">
@@ -52,7 +52,7 @@
 									<th>Description</th>
 									<th>Buttons</th>
 								</tr>
-								<tr th:each="pizza : ${menu}" th:object="${pizza}">
+								<tr th:each="pizza : ${pizzas}" th:object="${pizza}">
 									<th>[[ *{id} ]]</th>
 									<th>[[ *{name} ]]</th>
 									<th class="position-relative">€ [[ *{getFormattedPrice()} ]] <span
@@ -66,10 +66,10 @@
 											</p></th>
 									<th>[[ *{description} ]]</th>
 									<th>
-										<a class="btn btn-primary m-1" th:href="@{menu/{id}(id=${pizza.id})}">Show</a>
+										<a class="btn btn-primary m-1" th:href="@{pizzas/{id}(id=${pizza.id})}">Show</a>
 
 										<a class="btn btn-success m-1"
-											th:href="@{menu/edit/{id}(id=${pizza.id})}">Edit</a>
+											th:href="@{pizzas/edit/{id}(id=${pizza.id})}">Edit</a>
 
 										<!-- Button trigger modal -->
 										<button type="button" class="btn btn-warning m-1" data-bs-toggle="modal"
@@ -92,7 +92,7 @@
 														<button type="button" class="btn btn-secondary"
 															data-bs-dismiss="modal">Close</button>
 														<form class="d-inline-block"
-															th:action="@{menu/delete/{id}(id=${pizza.id})}"
+															th:action="@{pizzas/delete/{id}(id=${pizza.id})}"
 															method="POST">
 															<button type="submit"
 																class="btn btn-danger m-1">Delete</button>
@@ -112,7 +112,7 @@
 
 
 					</th:block>
-					<th:block th:unless="${menu.size > 0}">
+					<th:block th:unless="${pizzas.size > 0}">
 						<h2>No pizza has been found with query [[ ${pizzaName} ]]</h2>
 					</th:block>
 				</div>
@@ -140,7 +140,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="pizza : ${menu}">
+									<tr th:each="pizza : ${pizzas}">
 										<td th:text="${pizza.id}"></td>
 										<td th:text="${pizza.name}"></td>
 										<td th:text="${pizza.description}"></td>

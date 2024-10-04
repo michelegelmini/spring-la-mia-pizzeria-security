@@ -38,9 +38,9 @@
 										</th:block>
 										</div>
 										<th:block th:unless="${pizza.getDiscountedPrice() != null}">
-										<a th:href="@{/menu/{id}/specialOffer(id=${pizza.id})}" class="btn btn-primary mb-3">Add Special Offer</a>
+										<a th:href="@{/pizzas/{id}/specialOffer(id=${pizza.id})}" class="btn btn-primary mb-3">Add Special Offer</a>
 										</th:block>
-										<a th:href="@{/menu}" class="btn btn-primary">Back to menu</a>
+										<a th:href="@{/pizzas}" class="btn btn-primary">Back to pizzas</a>
 									</div>
 								</div>
 							</div>
@@ -71,7 +71,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="pizza : ${menu}">
+									<tr th:each="pizza : ${pizzas}">
 										<td th:text="${pizza.id}"></td>
 										<td th:text="${pizza.name}"></td>
 										<td th:text="${pizza.description}"></td>

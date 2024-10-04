@@ -14,7 +14,7 @@
 				<div class="col-12">
 					<h1 class="py-4 mb-2 text-center">Editing <strong>[[ ${pizza.name} ]]</strong></h1>
 
-					<form id="pizza-form" th:object="${pizza}" th:action="@{/menu/edit/{id}(id = ${pizza.id})}"
+					<form id="pizza-form" th:object="${pizza}" th:action="@{/pizzas/edit/{id}(id = ${pizza.id})}"
 						method="POST">
 
 						<!--	<th:block th:if="${#fields.hasErrors()}">
@@ -89,7 +89,7 @@
 
 
 					<div class="card-body d-flex justify-content-center align-items-center">
-						<a th:href="@{/menu}" class="btn btn-primary">Back to menu</a>
+						<a th:href="@{/pizzas}" class="btn btn-primary">Back to pizzas</a>
 					</div>
 				</div>
 			</div>
@@ -116,7 +116,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="pizza : ${menu}">
+									<tr th:each="pizza : ${pizzas}">
 										<td th:text="${pizza.id}"></td>
 										<td th:text="${pizza.name}"></td>
 										<td th:text="${pizza.description}"></td>

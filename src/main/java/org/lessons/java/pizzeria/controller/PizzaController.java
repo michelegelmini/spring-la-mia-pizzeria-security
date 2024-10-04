@@ -22,7 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/menu")
+@RequestMapping("/pizzas")
 public class PizzaController {
 
 	@Autowired
@@ -49,7 +49,7 @@ public class PizzaController {
 
 		// pizzaList = repo.findAll();
 		// li inserisco nel modello
-		model.addAttribute("menu", pizzaList);
+		model.addAttribute("pizzas", pizzaList);
 
 		return "/pizzas/index";
 	}
@@ -80,7 +80,7 @@ public class PizzaController {
 		attributes.addFlashAttribute("successMessage", formPizza.getName() + " has been created!");
 		
 		
-		return "redirect:/menu";
+		return "redirect:/pizzas";
 	}
 	
 	//edit
@@ -112,11 +112,11 @@ public class PizzaController {
 		}
 		//altrimenti salva la pizza nella repo
 		pizzaService.update(updatedFormPizza);	
-		//ritorna al menu aggiornato
+		//ritorna al pizzas aggiornato
 		attributes.addFlashAttribute("successMessage", updatedFormPizza.getName() + " has been updated!");
 		
 		
-		return "redirect:/menu";
+		return "redirect:/pizzas";
 	}
 	
 	//delete
@@ -128,7 +128,7 @@ public class PizzaController {
 		
 		attributes.addFlashAttribute("deletedMessage", "Pizza with id " + id + " has been deleted!");
 		
-		return "redirect:/menu";
+		return "redirect:/pizzas";
 	}
 	
 	//apply special offer
