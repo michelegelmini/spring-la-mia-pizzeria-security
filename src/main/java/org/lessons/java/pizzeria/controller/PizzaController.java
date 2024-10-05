@@ -139,7 +139,7 @@ public class PizzaController {
 	public String setSpecialOffer(@PathVariable("id") Integer id, Model model) {
 		SpecialOffer specialOffer = new SpecialOffer();
 		specialOffer.setStartingDate(LocalDate.now());
-		specialOffer.setPizza(pizzaService.findById(id));
+		specialOffer.setPizza(pizzaService.findById(id).get());
 		model.addAttribute("specialOffer", specialOffer);
 		
 		

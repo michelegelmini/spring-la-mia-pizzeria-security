@@ -31,6 +31,7 @@ public class SpecialOffer {
 	// specifico la colonna da creare nella relazione (foreign key)
 	@ManyToOne
 	@JoinColumn(name="pizza_id", nullable=false)	
+	
 	private Pizza pizza;
 	
 	//getters and setters

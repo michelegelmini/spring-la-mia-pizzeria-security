@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.hibernate.annotations.Formula;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -45,7 +47,7 @@ public class Pizza {
 	private Float price;
 	
 	//specifico la relazione one to many (una pizza può avere più offerte speciali)
-	
+	@JsonBackReference
 	@OneToMany(mappedBy = "pizza", cascade = {CascadeType.REMOVE})
 	private List<SpecialOffer> specialOffers;
 
@@ -64,6 +66,7 @@ public class Pizza {
 	
 	
 	//relation with ingredients many to many
+	@JsonBackReference
 	@ManyToMany()
 	@JoinTable(
 			name = "pizza_ingredient",

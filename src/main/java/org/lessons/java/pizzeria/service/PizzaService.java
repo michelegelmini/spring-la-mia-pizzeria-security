@@ -1,6 +1,7 @@
 package org.lessons.java.pizzeria.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.lessons.java.pizzeria.model.Ingredient;
 import org.lessons.java.pizzeria.model.Pizza;
@@ -25,6 +26,7 @@ public class PizzaService {
 	
 	}
 	
+	
 	public Pizza create(Pizza pizza) {
 		return repository.save(pizza);
 	}
@@ -33,9 +35,9 @@ public class PizzaService {
 		return repository.save(pizza);
 	}
 
-	public Pizza findById(Integer id) {
+	public Optional<Pizza> findById(Integer id) {
 		// TODO Auto-generated method stub
-		return repository.findById(id).get();
+		return repository.findById(id);
 	}
 
 	public void deleteById(Integer id) {

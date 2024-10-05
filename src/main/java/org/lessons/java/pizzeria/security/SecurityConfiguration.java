@@ -26,7 +26,7 @@ public class SecurityConfiguration {
                 .requestMatchers("/specialOffers").hasAuthority("ADMIN").requestMatchers("/ingredients").hasAuthority("ADMIN")
                 .requestMatchers("/pizzas", "pizzas/*").hasAnyAuthority("ADMIN", "USER")
                 .requestMatchers("/**").permitAll()
-                .requestMatchers("/webjars/**").permitAll()).formLogin(withDefaults()).logout(withDefaults()).exceptionHandling(withDefaults());
+                .requestMatchers("/webjars/**").permitAll()).formLogin(withDefaults()).logout(withDefaults()).exceptionHandling(withDefaults()).csrf().disable();
 		return http.build();
 	}
 
