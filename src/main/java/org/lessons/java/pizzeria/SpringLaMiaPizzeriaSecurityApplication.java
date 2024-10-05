@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringLaMiaPizzeriaRelazioniApplication {
+public class SpringLaMiaPizzeriaSecurityApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringLaMiaPizzeriaRelazioniApplication.class, args);
+		SpringApplication.run(SpringLaMiaPizzeriaSecurityApplication.class, args);
 	}
 
 }

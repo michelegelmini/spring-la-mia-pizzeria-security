@@ -24,9 +24,11 @@
 					</form>
 
 					<!--create pizza button-->
+					<th:block sec:authorize="hasAuthority('ADMIN')">
 					<div class="mb-3 d-flex ">
 						<a th:href="@{/pizzas/create}" class=" ms-auto me-5 btn btn-lg btn-primary">Add new Pizza</a>
 					</div>
+					</th:block>
 
 					<!--alert after create/edit-->
 					<th:block th:if="${successMessage != null}">

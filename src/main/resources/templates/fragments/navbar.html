@@ -24,6 +24,18 @@
 						<li class="nav-item">
 							<a class="nav-link" th:href="@{/specialOffers}">Special Offers</a>
 						</li>
+					</ul>
+					<div class="d-flex flex-end nav-item me-2">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li>
+								<span class="nav-link" sec:authentication="name"> </span>
+							</li>
+							
+							<li class="">
+								<a class="nav-link" th:href="@{/logout}">Logout</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</nav>

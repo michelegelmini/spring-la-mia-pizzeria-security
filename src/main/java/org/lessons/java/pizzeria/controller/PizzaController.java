@@ -8,6 +8,7 @@ import org.lessons.java.pizzeria.model.SpecialOffer;
 import org.lessons.java.pizzeria.service.IngredientService;
 import org.lessons.java.pizzeria.service.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -33,9 +34,11 @@ public class PizzaController {
 	private IngredientService ingredientService;
 
 	@GetMapping
-	public String index(Model model, @RequestParam(name = "name", required = false) String name) {
+	public String index(Model model, @RequestParam(name = "name", required = false) String name, Authentication authentication) {
 
 		model.addAttribute("pizzaName", name);
+		model.addAttribute("username", authentication.getName());
+		
 		List<Pizza> pizzaList;
 
 		if (name != null && !name.isEmpty()) {
